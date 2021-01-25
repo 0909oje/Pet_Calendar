@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pet_Calendar">
+        <activity android:name=".activity_pet"></activity>
+        <activity android:name=".popup_pet_list" />
+        <activity android:name=".popup_schedule" />
+        <activity android:name=".popup_day" />
+        <activity android:name=".activity_detail" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
