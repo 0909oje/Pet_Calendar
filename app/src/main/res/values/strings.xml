@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Pet_Calendar</string>
+    <string name="activity_detail_back">Back</string>
+    <string name="activity_detail_edit">Edit</string>
 </resources>
