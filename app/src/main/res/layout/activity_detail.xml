@@ -10,20 +10,22 @@
         android:id="@+id/activity_detail_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/activity_detail_back"
         app:layout_constraintBottom_toTopOf="@+id/activity_detail_profile"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/sample_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="180dp"
+        android:gravity="center"
         android:text="선택날짜"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,41 +34,81 @@
         android:id="@+id/activity_detail_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:text="@string/activity_detail_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/activity_detail_profile"
-        android:layout_width="89dp"
-        android:layout_height="0dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="569dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="133dp"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_detail_picture"
+        app:layout_constraintEnd_toStartOf="@+id/activity_detail_profile_add"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_detail_back"
+        app:layout_constraintTop_toTopOf="@+id/activity_detail_box"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/activity_detail_picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_detail_diary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_detail_profile"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/activity_detail_diary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="50dp"
-        android:text="TextView"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/make_edge"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_detail_picture" />
+
+    <TextView
+        android:id="@+id/activity_detail_box"
+        android:layout_width="600dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="49dp"
+        android:background="#FFBB86FC"
+        app:layout_constraintBottom_toTopOf="@+id/activity_detail_profile_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/activity_detail_profile_add"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="496dp"
+        android:text="@string/activity_detail_profile_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_detail_profile" />
+
+    <Button
+        android:id="@+id/activity_detail_picture_add"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="356dp"
+        android:text="@string/activity_detail_picture_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/activity_detail_picture" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
