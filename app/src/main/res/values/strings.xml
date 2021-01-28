@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Pet_Calendar</string>
+    <string name="activity_detail_back">Back</string>
+    <string name="activity_detail_edit">Edit</string>
+    <string name="activity_detail_picture_add">+</string>
+    <string name="activity_detail_profile_add">+</string>
+    <string name="activity_detail_date">Date</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
