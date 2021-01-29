@@ -26,28 +26,28 @@
 
             <Button
                 android:id="@+id/activity_detail_date"
+                android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="16dp"
-                android:layout_toRightOf="@id/activity_detail_back"
-                android:layout_toLeftOf="@id/activity_detail_edit"
                 android:layout_marginStart="35dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="35dp"
-                android:onClick="showDatePicker"
-                />
+                android:layout_toLeftOf="@id/activity_detail_edit"
+                android:layout_toRightOf="@id/activity_detail_back"
+                android:gravity="center"
+                android:onClick="showDatePicker" />
 
-            <EditText
+            <TextView
                 android:id="@+id/activity_detail_date_input"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:gravity="center"
-                android:layout_marginTop="16dp"
-                android:layout_toRightOf="@id/activity_detail_back"
-                android:layout_toLeftOf="@id/activity_detail_edit"
                 android:layout_marginStart="35dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="35dp"
-                />
+                android:layout_toLeftOf="@id/activity_detail_edit"
+                android:layout_toRightOf="@id/activity_detail_back"
+                android:gravity="center" />
+
 
             <Button
                 android:id="@+id/activity_detail_edit"
