@@ -3,13 +3,17 @@ package com.example.pet_calendar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+
+import android.widget.DatePicker;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class activity_detail extends AppCompatActivity {
     Button add1 ;
@@ -18,7 +22,8 @@ public class activity_detail extends AppCompatActivity {
     Button edit ;
     Button back_detail ;
     Button back_main ;
-    EditText date ;
+    TextView date;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +32,10 @@ public class activity_detail extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_detail);
 
-        // back 클릭 시 메인화면
+        date =(TextView)findViewById(R.id.activity_detail_date_input);
+        Calendar cal = Calendar.getInstance();
+        date.setText(cal.get(Calendar.YEAR) +"-"+ (cal.get(Calendar.MONTH)+1) +"-"+ cal.get(Calendar.DATE));
 
-        ////edit 클릭 후 back 클릭 시 저장안되는 것 만들지 않음
-
-        //edit 클릭 시 +버튼, save 버튼 보이기, back 버튼 보이기, 텍스트, 사진 수정 가능
-        //edit, back 사라지기
     }
 
     public void InitializeView(){
@@ -42,7 +45,7 @@ public class activity_detail extends AppCompatActivity {
         edit = (Button) findViewById(R.id.activity_detail_edit);
         back_detail = (Button) findViewById(R.id.activity_detail_back_detail);
         back_main = (Button) findViewById(R.id.activity_detail_back);
-        date = (EditText)findViewById(R.id.activity_detail_date_input);
+
     }
 
     public void SetListener() {
@@ -68,26 +71,37 @@ public class activity_detail extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(intent);
                         break;
-
                 }
             }
         };
     }
 
-
-    //    날짜 선택하기
+    //datePicker 보여줌
     public void showDatePicker(View view) {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(),"datePicker");
+    }
+
+    DatePickerDialog.OnDateSetListener mDateSetListener =new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker datePicker, int yy, int mm, int dd) {
+            // Date Picker에서 선택한 날짜를 TextView에 설정
+            date.setText(String.format("%d-%d-%d", yy,mm+1,dd));
+        }
+    };
+
+    public void mOnClick_DatePick(View view){ // 실행성공
+        // DATE Picker가 처음 떴을 때, 오늘 날짜가 보이도록 설정.
+        Calendar cal = Calendar.getInstance();
+        new DatePickerDialog(this, mDateSetListener, cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH), cal.get(Calendar.DATE)).show();
     }
 
     public void processDatePickerResult(int year, int month, int day){
         String month_string = Integer.toString(month+1);
         String day_string = Integer.toString(day);
         String year_string = Integer.toString(year);
-        String dateMessage = (month_string + "/" + day_string + "/" + year_string);
-
-
-        Toast.makeText(this,"Date: "+dateMessage,Toast.LENGTH_SHORT).show();
+        date.setText(String.format("%s-%s-%s", year_string,month_string,day_string ));
     }
+    
 }
