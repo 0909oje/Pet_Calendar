@@ -80,18 +80,16 @@
 
         </RelativeLayout>
 
-        <LinearLayout
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/activity_detail_profile"
-                android:layout_width="75dp"
-                android:layout_height="77dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                tools:srcCompat="@tools:sample/avatars" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/activity_detail_listview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scrollbars="horizontal" />
 
             <Button
                 android:id="@+id/activity_detail_profile_add"
@@ -100,6 +98,7 @@
                 android:layout_height="75dp"
                 android:layout_marginStart="16dp"
                 android:text="@string/activity_detail_profile_add" />
+
 
         </LinearLayout>
 
@@ -132,6 +131,9 @@
             android:layout_height="264dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/make_edge" />
     </LinearLayout>
 

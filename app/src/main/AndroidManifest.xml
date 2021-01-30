@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pet_calendar">
+    package="com.example.pet_calendar_0130">
 
     <application
         android:allowBackup="true"
@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pet_Calendar">
-        <activity android:name=".activity_pet"></activity>
-        <activity android:name=".popup_pet_list" />
-        <activity android:name=".popup_schedule" />
-        <activity android:name=".popup_day" />
-        <activity android:name=".activity_detail" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.pet_calendar_0130.activity_pet"></activity>
+        <activity android:name="com.example.pet_calendar_0130.popup_pet_list" />
+        <activity android:name="com.example.pet_calendar_0130.popup_schedule" />
+        <activity android:name="com.example.pet_calendar_0130.popup_day" />
+        <activity android:name="com.example.pet_calendar_0130.activity_detail" />
+        <activity android:name="com.example.pet_calendar_0130.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

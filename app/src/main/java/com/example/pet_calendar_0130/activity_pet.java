@@ -1,14 +1,14 @@
-package com.example.pet_calendar;
+package com.example.pet_calendar_0130;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class popup_schedule extends AppCompatActivity {
+public class activity_pet extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.popup_schedule);
+        setContentView(R.layout.activity_pet);
     }
 }
