@@ -11,18 +11,15 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Calendar;
 
 public class activity_detail extends AppCompatActivity {
-    Button add1 ;
-    Button add2 ;
-    Button save ;
-    Button edit ;
-    Button back_detail ;
-    Button back_main ;
-    TextView date;
+    Button add1, add2, edit, save, back_detail, back_main;
+    TextView date, output;
+    EditText input;
 
 
     @Override
@@ -32,7 +29,9 @@ public class activity_detail extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_detail);
 
-        date =(TextView)findViewById(R.id.activity_detail_date_input);
+        this.InitializeView();
+        this.SetListener();
+
         Calendar cal = Calendar.getInstance();
         date.setText(cal.get(Calendar.YEAR) +"-"+ (cal.get(Calendar.MONTH)+1) +"-"+ cal.get(Calendar.DATE));
 
@@ -45,35 +44,56 @@ public class activity_detail extends AppCompatActivity {
         edit = (Button) findViewById(R.id.activity_detail_edit);
         back_detail = (Button) findViewById(R.id.activity_detail_back_detail);
         back_main = (Button) findViewById(R.id.activity_detail_back);
+        input = (EditText) findViewById(R.id.activity_detail_diary_input);
+        output = (TextView) findViewById(R.id.activity_detail_diary_output);
+        date =(TextView)findViewById(R.id.activity_detail_date_input);
 
     }
 
     public void SetListener() {
-        View.OnClickListener Listener = new View.OnClickListener() {
+        edit.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-
-                    //edit 클릭 후 back 클릭 시 저장안되는 것 만들지 않음
-                    //edit 클릭 시 +버튼, save 버튼 보이기, back 버튼 보이기, 텍스트, 사진 수정 가능
-                    //edit, back 사라지기
-                    case R.id.activity_detail_edit:
-                        add1.setVisibility(View.VISIBLE);
-                        add2.setVisibility(View.VISIBLE);
-                        save.setVisibility(View.VISIBLE);
-                        back_detail.setVisibility(View.VISIBLE);
-                        edit.setVisibility(View.INVISIBLE);
-                        back_main.setVisibility(View.INVISIBLE);
-                        break;
-
-                    // back 클릭 시 메인화면
-                    case R.id.activity_detail_back:
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                        startActivity(intent);
-                        break;
-                }
+            public void onClick(View view){
+                add1.setVisibility(View.VISIBLE);
+                add2.setVisibility(View.VISIBLE);
+                save.setVisibility(View.VISIBLE);
+                back_detail.setVisibility(View.VISIBLE);
+                edit.setVisibility(View.INVISIBLE);
+                back_main.setVisibility(View.INVISIBLE);
             }
-        };
+        });
+
+        save.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                add1.setVisibility(View.INVISIBLE);
+                add2.setVisibility(View.INVISIBLE);
+                save.setVisibility(View.INVISIBLE);
+                back_detail.setVisibility(View.INVISIBLE);
+                edit.setVisibility(View.VISIBLE);
+                back_main.setVisibility(View.VISIBLE);
+            }
+        });
+
+        back_main.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        back_detail.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                add1.setVisibility(View.INVISIBLE);
+                add2.setVisibility(View.INVISIBLE);
+                save.setVisibility(View.INVISIBLE);
+                back_detail.setVisibility(View.INVISIBLE);
+                edit.setVisibility(View.VISIBLE);
+                back_main.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     //datePicker 보여줌

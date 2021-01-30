@@ -82,22 +82,16 @@
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:orientation="vertical">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/activity_detail_listview"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scrollbars="horizontal" />
 
             <Button
                 android:id="@+id/activity_detail_profile_add"
                 android:visibility="gone"
-                android:layout_width="79dp"
+                android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginStart="16dp"
-                android:text="@string/activity_detail_profile_add" />
+                android:text="@string/activity_detail_profile_add" /> />
 
 
         </LinearLayout>
@@ -107,34 +101,46 @@
             android:layout_height="150dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/activity_detail_picture"
-                android:layout_width="109dp"
-                android:layout_height="98dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
             <Button
                 android:id="@+id/activity_detail_picture_add"
                 android:visibility="gone"
-                android:layout_width="113dp"
-                android:layout_height="98dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
                 android:text="@string/activity_detail_picture_add" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/activity_detail_diary"
-            android:layout_width="339dp"
-            android:layout_height="264dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/make_edge" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/activity_detail_diary_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/make_edge" />
+
+            <TextView
+                android:id="@+id/activity_detail_diary_output"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/make_edge" />
+
+
+
+        </RelativeLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
