@@ -2,6 +2,8 @@ package com.example.pet_calendar_0130;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -16,6 +18,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class activity_detail extends AppCompatActivity {
@@ -23,6 +26,8 @@ public class activity_detail extends AppCompatActivity {
     TextView date, output;
     EditText input;
     InputMethodManager imm;
+    RecyclerView profile,picture;
+    RecyclerView.LayoutManager mLayoutManager;
 
 
     @Override
@@ -36,8 +41,13 @@ public class activity_detail extends AppCompatActivity {
         this.SetListener();
 
         // 날짜 클릭 시 달력 불러옴
-        Calendar cal = Calendar.getInstance();
-        date.setText(cal.get(Calendar.YEAR) +"-"+ (cal.get(Calendar.MONTH)+1) +"-"+ cal.get(Calendar.DATE));
+        this.getCalendar();
+
+//        //리사이클뷰 구현 -> 후에 구현
+//        this.setProfile();
+//        this.setPicture();
+
+
 
     }
 
@@ -52,6 +62,8 @@ public class activity_detail extends AppCompatActivity {
         output = (TextView) findViewById(R.id.activity_detail_diary_output);
         date =(TextView)findViewById(R.id.activity_detail_date_input);
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        profile = (RecyclerView)findViewById(R.id.activity_detail_date_profile);
+        picture = (RecyclerView)findViewById(R.id.activity_detail_date_picture);
     }
 
     public void SetListener() {
@@ -151,6 +163,28 @@ public class activity_detail extends AppCompatActivity {
         String day_string = Integer.toString(day);
         String year_string = Integer.toString(year);
         date.setText(String.format("%s-%s-%s", year_string,month_string,day_string ));
+    }
+
+    public void getCalendar(){
+        Calendar cal = Calendar.getInstance();
+        date.setText(cal.get(Calendar.YEAR) +"-"+ (cal.get(Calendar.MONTH)+1) +"-"+ cal.get(Calendar.DATE));
+    }
+
+    public void setProfile(){
+//        profile.setHasFixedSize(true);
+//        mLayoutManager = new LinearLayoutManager(this);
+//        profile.setLayoutManager(mLayoutManager);
+//
+//        ArrayList<Pet> PetInfoArr = new ArrayList<>();
+//        PetInfoArr.add(Pet.drawableId);
+//
+//        MyAdapter myAdapter = new MyAdapter(PetInfoArr);
+//
+//        profile.setAdapter(myAdapter);
+
+    }
+    public void setPicture(){
+
     }
     
 }
