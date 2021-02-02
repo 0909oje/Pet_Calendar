@@ -8,6 +8,9 @@ public class Diary {
     public Diary(int date){
         this.date = date;
     }
+    public Diary(int[] pictureId) { this.pictureId = pictureId ;}
+    public Diary(String memo) { this.memo = memo ;}
+
     public void getPicture(int[] id){
         this.pictureId = id;
     }

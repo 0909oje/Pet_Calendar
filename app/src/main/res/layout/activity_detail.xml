@@ -109,19 +109,25 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/activity_detail_date_picture"
-                android:scrollbars="horizontal"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
-                />
+                android:scrollbars="horizontal" />
 
             <Button
                 android:id="@+id/activity_detail_picture_add"
-                android:visibility="gone"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
-                android:text="@string/activity_detail_picture_add" />
+                android:layout_marginTop="16dp"
+                android:text="@string/activity_detail_picture_add"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/activity_detail_samplepic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
         </LinearLayout>
 
         <RelativeLayout
