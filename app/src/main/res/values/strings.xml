@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Pet_Calendar</string>
+
     <string name="activity_detail_back">Back</string>
     <string name="activity_detail_back_detail">Back</string>
     <string name="activity_detail_edit">Edit</string>
@@ -7,6 +8,20 @@
     <string name="activity_detail_picture_add">+</string>
     <string name="activity_detail_profile_add">+</string>
     <string name="activity_detail_date">Date</string>
+
+    <string name="activity_pet_add">Add</string>
+    <string name="activity_pet_add_name">Name</string>
+    <string name="activity_pet_add_dog">Dog</string>
+    <string name="activity_pet_add_cat">Cat</string>
+    <string name="activity_pet_add_etc">Etc</string>
+    <string name="activity_pet_add_birth">Birth</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_pet_add">activity_pet_add</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

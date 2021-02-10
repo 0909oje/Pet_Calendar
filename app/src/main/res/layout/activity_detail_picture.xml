@@ -21,12 +21,18 @@
 
         <ImageView
             android:id="@+id/iv_picture"
-            android:layout_width="60dp"
+            android:layout_width="53dp"
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:layout_margin="10dp"
-            tools:src="@drawable/ic_launcher_background"
-            />
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/iv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
 
     </LinearLayout>
 
